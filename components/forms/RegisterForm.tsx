@@ -18,6 +18,7 @@ import { Doctors, GenderOptions, IdentificationTypes } from "@/constants";
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
+import FileUploader from "../FileUploader";
 
 const RegisterForm = ({user} : {user:User}) => {
   const router = useRouter();
@@ -271,6 +272,53 @@ const RegisterForm = ({user} : {user:User}) => {
                 </SelectItem>
            ))}
         </CustomFormField>
+
+        <CustomFormField
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="identificationNumber"
+            label="Identification Number"
+            placeholder="123456789"
+        />
+
+        <CustomFormField
+            fieldType={FormFieldType.SKELETON}
+            control={form.control}
+            name="identificationDocument"
+            label="Scanned copy of Identification Document"
+            renderSkeleton={(field)=>(
+                <FormControl>
+                    <FileUploader files = {field.value} onChange={field.onChange}/>
+                </FormControl>
+            )}
+        />
+
+        <section className="space-y-6">
+            <div className="mb-9 space-y-6">
+                <h2 className="sub-header">Consent and Privacy</h2>
+            </div>
+        </section>
+
+        <CustomFormField
+            fieldType={FormFieldType.CHECKBOX}
+            control = {form.control}
+            name = "treatmentConsent"
+            label = "I consent to Treatment"
+        />
+
+        <CustomFormField
+            fieldType={FormFieldType.CHECKBOX}
+            control = {form.control}
+            name = "disclosureConsent"
+            label = "I consent to disclosure of information for Treatment Purposes"
+        />
+
+        <CustomFormField
+            fieldType={FormFieldType.CHECKBOX}
+            control = {form.control}
+            name = "privacyConsent"
+            label = "I consent to privacy policy"
+        />
 
         <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
       </form>
