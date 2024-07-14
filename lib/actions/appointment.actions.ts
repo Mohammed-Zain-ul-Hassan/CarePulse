@@ -25,3 +25,18 @@ export const CreateAppointment = async (appointment: CreateAppointmentParams) =>
         //throw error; // Re-throw the error to propagate it back to the caller
     }
 }
+
+
+export const getAppointment = async (appointmentId : string) => {
+    try {
+         const appointment = await databases.getDocument(
+            DATABASE_ID!,
+            APPOINTMENT_COLLECTION_ID!,
+            appointmentId,
+         )
+
+        return parseStringify(appointment);
+    } catch (error) {
+        console.log("Error getting the appointment details : ",error)
+    }
+}
