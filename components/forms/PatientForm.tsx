@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
@@ -8,7 +8,7 @@ import { z } from "zod";
 
 import { Form } from "@/components/ui/form";
 import { createUser } from "@/lib/actions/patient.actions";
-import { UserFormValidation } from "@/lib/validation";
+import { UserFormValidation } from "@/lib/validation"; // Assuming UserFormValidation is imported correctly
 
 import "react-phone-number-input/style.css";
 import CustomFormField, { FormFieldType } from "../CustomFormField";
@@ -17,7 +17,6 @@ import SubmitButton from "../SubmitButton";
 const PatientForm = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
     defaultValues: {
@@ -29,6 +28,7 @@ const PatientForm = () => {
 
   const onSubmit = async (values: z.infer<typeof UserFormValidation>) => {
     setIsLoading(true);
+    console.log("Starting up!");
 
     try {
       const user = {
@@ -40,10 +40,13 @@ const PatientForm = () => {
       const newUser = await createUser(user);
 
       if (newUser) {
+        console.log("User created successfully:", newUser); // Ensure newUser is defined
         router.push(`/patients/${newUser.$id}/register`);
+      } else {
+        console.log("User creation failed or returned undefined.");
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error creating user:", error);
     }
 
     setIsLoading(false);

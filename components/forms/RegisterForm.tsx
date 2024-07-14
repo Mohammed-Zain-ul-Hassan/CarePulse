@@ -36,7 +36,7 @@ const RegisterForm = ({user} : {user:User}) => {
 
   const onSubmit = async (values: z.infer<typeof PatientFormValidation>) => {
     setIsLoading(true);
-
+    console.log("Trying to Sign up a user")
     let formData;
 
     if(values.identificationDocument && values?.identificationDocument.length > 0){
