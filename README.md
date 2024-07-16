@@ -4,4 +4,4 @@ It's a full fledge medical app. A management system that provides a interactive 
 
 It's made using Next Js, Appwrite, typescript , tailwind CSS and Sentry. 
 
-Orignally by Adrian Hajdin.
+Inspired by Adrian Hajdin.
