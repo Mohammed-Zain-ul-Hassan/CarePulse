@@ -4,13 +4,16 @@ import Link from 'next/link'
 import React from 'react'
 import { getPatient, getUser } from '@/lib/actions/patient.actions'
 import AppointmentForm from '@/components/forms/AppointmentForm'
+import * as Sentry from "@sentry/nextjs"
 
 const NewAppointment = async ({params : {userId}} : SearchParamProps) => {
   const patient = await getPatient(userId)
   const user = await getUser(userId);
+
+  Sentry.metrics.set("user_view_new-appointment", patient.name);
+
   return (
     <div className="flex h-screen max-h-screen">
-      {/* TODO: OTP Verification  | Passkey Modal*/}
       
       <section className="remove-scrollbar container">
         <div className="sub-container max-w-[860px] flex-1 justify-between">
