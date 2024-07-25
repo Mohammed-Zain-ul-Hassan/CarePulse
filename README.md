@@ -1,10 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`]
+# CarePulse - Medical Appointment System
 
-It's a full fledge Medical Application. A management system that provides a interactive for making reservations to any of your desired doctor. Doctor can either choose to accept or reject the appointment from patient.
+CarePulse is a full-fledged medical application that provides an interactive platform for patients to make reservations with their desired doctors. Doctors can then choose to accept or reject these appointments.
 
-It's made using Next Js, Appwrite, typescript , tailwind CSS and Sentry. 
+[Live Demo](https://the-care-pulse.vercel.app/)
 
-Inspired by Adrian Hajdin.
+## Features
 
-It's Deployed on Vercel Server. Check it out!
-https://the-care-pulse.vercel.app/
+- User-friendly interface for patients to book appointments
+- Doctor dashboard for managing appointment requests
+- Real-time updates on appointment status
+- Secure user authentication and authorization
+- Patient verification process
+- Simple appointment booking form
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Appwrite](https://appwrite.io/)
+- [Sentry](https://sentry.io/)
+- [Twilio](https://www.twilio.com/)
+
+## Usage
+
+1. **Sign Up / Login:**
+   - New users can sign up on the first page.
+   - Administrators can log in to the admin dashboard.
+
+2. **Patient Verification:**
+   - After signing up, users can become verified patients by filling out custom information.
+
+3. **Booking an Appointment:**
+   - Verified patients can book an appointment by filling out a simple form.
+   - Select desired doctor, date, and time.
+   - Submit the appointment request.
+
+4. **Appointment Management:**
+   - Doctors can view and manage appointment requests through their dashboard.
+   - Options to accept or reject appointment requests.
+
+5. **Real-time Updates:**
+   - Patients receive real-time updates on their appointment status.
+
+## Deployment
+
+This project is deployed on [Vercel](https://vercel.com/).
+
+## Acknowledgements
+
+- Inspired by Adrian Hajdin
