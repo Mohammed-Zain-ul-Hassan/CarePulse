@@ -6,5 +6,5 @@ It's made using Next Js, Appwrite, typescript , tailwind CSS and Sentry.
 
 Inspired by Adrian Hajdin.
 
-It's Deployed on Vercel Server. If you want to Chechout click down below!
+It's Deployed on Vercel Server. Check it out!
 https://the-care-pulse.vercel.app/
