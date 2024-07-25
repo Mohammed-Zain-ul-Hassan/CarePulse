@@ -5,3 +5,6 @@ It's a full fledge Medical Application. A management system that provides a inte
 It's made using Next Js, Appwrite, typescript , tailwind CSS and Sentry. 
 
 Inspired by Adrian Hajdin.
+
+It's Deployed on Vercel Server. If you want to Chechout click down below!
+https://the-care-pulse.vercel.app/
